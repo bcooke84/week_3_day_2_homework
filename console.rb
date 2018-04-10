@@ -1,6 +1,8 @@
 require ("pry-byebug")
 require_relative("./models/bounty.rb")
 
+Bounty.delete_all()
+
 bounty1 = Bounty.new({
   "name" => "Alien1",
   "species" => "Alien",
@@ -25,6 +27,8 @@ bounty1 = Bounty.new({
       "bounty_value" => 750,
       "danger_level" => "low"
       })
+
+      bounty3.save()
 
       bounty4 = Bounty.new({
         "name" => "Human2",
