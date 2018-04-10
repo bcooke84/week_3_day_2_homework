@@ -8,12 +8,16 @@ bounty1 = Bounty.new({
   "danger_level" => "medium"
   })
 
+  bounty1.save()
+
   bounty2 = Bounty.new({
     "name" => "Human1",
     "species" => "Human",
     "bounty_value" => 1500,
     "danger_level" => "high"
     })
+
+    bounty2.save()
 
     bounty3 = Bounty.new({
       "name" => "Alien2",
@@ -23,7 +27,7 @@ bounty1 = Bounty.new({
       })
 
       bounty4 = Bounty.new({
-        "name" = "Human2",
+        "name" => "Human2",
         "species" => "Human",
         "bounty_value" => 500,
         "danger_level" => "low"

@@ -1,6 +1,6 @@
-DROP TABLE space_cowboys;
+DROP TABLE bounty;
 
-CREATE TABLE space_cowboys(
+CREATE TABLE bounty(
   id SERIAL PRIMARY KEY,
   name VARCHAR(255),
   species VARCHAR(255),
