@@ -66,7 +66,18 @@ class Bounty
     values = [name]
     db.prepare("find_by_name", sql)
     bounty_instance = db.exec_prepared("find_by_name", values)
-    return Bounty.new(bounty_instance.first())
+    bounty_instance.count == 0 ? nil : Bounty.new(bounty_instance.first())
+  end
+
+  # Implement a second self.find method that returns one instance of your class when an id is passed in.
+
+  def Bounty.find_by_id(id)
+    db = PG.connect ({ dbname: "space_cowboys", host: "localhost" })
+    sql = "SELECT * FROM bounty WHERE id = $1"
+    values = [id]
+    db.prepare("find_by_id", sql)
+    bounty_instance = db.exec_prepared("find_by_id", values)
+    bounty_instance.count == 0 ? nil : Bounty.new(bounty_instance.first())
   end
 
 end
